@@ -17,8 +17,8 @@ md5sums=("SKIP")
 validpgpkeys=(6A2ECC8A396F8A943A109A1E0F11C2A6BF79111E)
 
 package() {
-    cd "$srcdir/${pkgname}"
-    install -Dm 644 LICENSE -t "${pkgdir}"/usr/share/licenses/"${pkgname}"/
-    find "${_plasmoidName}" -type f -exec install -Dm 644 "{}" "${pkgdir}/usr/share/plasma/wallpapers/{}" \;
+  cd "$srcdir/${pkgname}"
+  install -Dm 644 LICENSE -t "${pkgdir}"/usr/share/licenses/"${pkgname}"/
+  find "${_plasmoidName}" -type f -exec install -Dm 644 "{}" "${pkgdir}/usr/share/plasma/wallpapers/{}" \;
 }
 
