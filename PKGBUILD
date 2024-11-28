@@ -1,12 +1,13 @@
-# Maintainer: Bouteiller a2n Alan <a2n.dev@pm.me>
+# Maintainer: Bouteiller a2n Alan <a2n.dev at pm.me>
 
 _plasmoidName="a2n.blur"
+_sourcename="blurredwallpaper"
 pkgname=plasma6-wallpapers-blurredwallpaper-git
-pkgver=3.2.0
-pkgrel=4
+pkgver=3.1.1.r1.g09f8a08
+pkgrel=1
 pkgdesc="KDE Plasma wallpaper plugin that blurs the wallpaper when a window is active"
 arch=(x86_64)
-url="https://github.com/bouteillerAlan/${pkgname}"
+url="https://github.com/bouteillerAlan/${_sourcename}"
 license=(GPL-3.0-or-later)
 makedepends=('git')
 depends=('plasma-workspace')
@@ -16,9 +17,15 @@ source=("git+${url}.git")
 md5sums=("SKIP")
 validpgpkeys=(6A2ECC8A396F8A943A109A1E0F11C2A6BF79111E)
 
+pkgver() {
+  cd "${_sourcename}"
+  git describe --long --abbrev=7 | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
 package() {
-  cd "$srcdir/${pkgname}"
+  cd "${_sourcename}"
   install -Dm 644 LICENSE -t "${pkgdir}"/usr/share/licenses/"${pkgname}"/
   find "${_plasmoidName}" -type f -exec install -Dm 644 "{}" "${pkgdir}/usr/share/plasma/wallpapers/{}" \;
 }
+
 
