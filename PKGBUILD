@@ -3,9 +3,9 @@
 _plasmoidName="a2n.blur"
 _sourcename="blurredwallpaper"
 pkgname=plasma6-wallpapers-blurredwallpaper-git
-pkgver=3.2.0
-pkgrel=2
-pkgdesc="KDE Plasma wallpaper plugin that blurs the wallpaper when a window is active"
+pkgver=3.3.1
+pkgrel=3
+pkgdesc="KDE Plasma wallpaper plugin that blurs and/or dim the wallpaper when a window is active"
 arch=(x86_64)
 url="https://github.com/bouteillerAlan/${_sourcename}"
 license=(GPL-3.0-or-later)
